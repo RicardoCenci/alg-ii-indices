@@ -64,11 +64,11 @@ class IndexedBinaryFile:
                 
                 app_id = app_id.strip()
 
-                if app_id.lstrip(' ') == target_app_id:
+                if app_id == target_app_id:
                     with open(self.filename, 'r', encoding='utf-8') as f:
                         f.seek(int(posicao))
                         return [value.strip() for value in f.readline().rstrip('\n').split('\,')]
-                elif app_id.lstrip(' ') < target_app_id:
+                elif app_id < target_app_id:
                     esquerda = meio + 1
                 else:
                     direita = meio - 1
