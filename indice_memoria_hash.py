@@ -27,16 +27,16 @@ class HashIndice:
                          
                 self.inserir(categoria, index)
 
-    def hash_funcao(self, chave):
+    def _hash(self, chave):
         return hash(chave) % self.tamanho
 
     def inserir(self, chave, valor):
-        indice = self.hash_funcao(chave)
+        indice = self._hash(chave)
         balde = self.buckets[indice]
         balde.append(valor)
 
     def findBucket(self, chave):
-        indice = self.hash_funcao(chave)
+        indice = self._hash(chave)
         return self.buckets[indice]
         
     def find(self, chave):
