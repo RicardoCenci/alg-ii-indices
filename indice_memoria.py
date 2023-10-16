@@ -1,31 +1,6 @@
 import os
 import math
-
-APP_NAME = 0
-APP_ID = 1
-CATEGORY = 2
-RATING = 3
-RATING_COUNT = 4
-INSTALLS = 5
-MINIMUM_INSTALLS = 6
-MAXIMUM_INSTALLS = 7
-FREE = 8
-PRICE = 9
-CURRENCY = 10 
-SIZE = 11
-MINIMUM_ANDROID = 12
-DEVELOPER_ID = 13
-DEVELOPER_WEBSITE = 14
-DEVELOPER_EMAIL = 15
-RELEASED = 16
-LAST_UPDATED = 17
-CONTENT_RATING = 18
-PRIVACY_POLICY = 19
-AD_SUPPORTED = 20
-IN_APP_PURCHASES = 21
-EDITORS_CHOICE = 22
-SCRAPED_TIM = 23
-
+import csv_cols
 
 class HashIndice:
     def __init__(self, fileName):
@@ -48,7 +23,7 @@ class HashIndice:
                 
                 registro = registro.decode('utf-8').rstrip('\n').split(',')
 
-                categoria = registro[CATEGORY].rstrip(' ')
+                categoria = registro[csv_cols.CATEGORY].rstrip(' ')
                          
                 self.inserir(categoria, index)
 
@@ -79,4 +54,4 @@ class HashIndice:
 
 indice = HashIndice('output.bin')
 for item in indice.find('Tools'):
-    print(item[APP_NAME])
+    print(item[csv_cols.APP_NAME])
