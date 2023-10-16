@@ -28,7 +28,7 @@ class CsvToBinaryFile:
                     for i, value in enumerate(row):
                         formatted_value = value.ljust(self.column_sizes[i])
                         formatted_row.append(formatted_value)
-                    record = ','.join(formatted_row) + '\n'
+                    record = '\\,'.join(formatted_row) + '\n'
 
                     bin_file.write(record.encode('utf-8'))
 
