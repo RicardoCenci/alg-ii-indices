@@ -21,7 +21,7 @@ class HashIndice:
                 if not registro:
                     break
                 
-                registro = registro.decode('utf-8').rstrip('\n').split(',')
+                registro = registro.decode('utf-8').rstrip('\n').split('\,')
 
                 categoria = registro[csv_cols.CATEGORY].rstrip(' ')
                          
@@ -46,7 +46,7 @@ class HashIndice:
         with open(self.fileName, 'rb') as f:
             for item in bucket:
                 f.seek(item)
-                registers.append(f.readline().decode('utf-8').rstrip('\n').split(','))
+                registers.append(f.readline().decode('utf-8').rstrip('\n').split('\,'))
 
         return registers
 
