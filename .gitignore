@@ -1,3 +1,4 @@
 *.csv
 *.bin
 *.rar
+__pycache__
